@@ -124,8 +124,13 @@ body {
 .modest-p {
   font-size: 1rem;
   margin-bottom: 1.3rem;
-  
+  margin-left: 5%;
 }
+
+.content li{
+   margin-left: 5%;
+}
+
 
 .content img{
   
@@ -230,6 +235,7 @@ h4,
 h5,
 h6 {
   font-family: Arimo, Helvetica, sans-serif;
+   text-align: center;
 }
 
 h1,
@@ -238,7 +244,7 @@ h3 {
   border-bottom: 2px solid #fafafa;
   margin-bottom: 1.15rem;
   padding-bottom: .5rem;
-  text-align: center;
+ 
 }
 
 blockquote {
@@ -250,6 +256,9 @@ pre,
 code {
   background-color: #000000;
 }
+
+
+
 
 @keyframes spawn {
   0% {

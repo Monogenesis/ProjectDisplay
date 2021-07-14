@@ -125,8 +125,11 @@ html{
 
 .content *{
     animation: spawn 2s ease;
-   
+
 }
+
+
+
 .tab {
     float: left;
     width: 100%;
