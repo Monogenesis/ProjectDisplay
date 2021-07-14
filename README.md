@@ -3,6 +3,10 @@
 
 Project to display and showcase my own projects
 
+## Demo
+
+https://monogenesis.github.io/ProjectDisplay/
+
 ## Lessons Learned
 
 - HTML
@@ -18,5 +22,5 @@ Project to display and showcase my own projects
 ## Features
 
 - Project overview
-- Eeasy selection
+- Easy selection
 - Markdown import directly from my GitHub repository
