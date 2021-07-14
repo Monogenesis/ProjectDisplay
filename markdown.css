@@ -130,19 +130,31 @@ body {
 .content li{
    margin-left: 5%;
 }
+.content p  {
+display: flex;
+flex-direction: column;
 
-
+}
+.content p img{
+    
+    align-self: center;
+    padding: 10px;
+    background-color: black;
+}
 .content img{
-  
-  max-height: 80%;
-  max-width: 80%;
-  margin-left: 10%;
-  margin-bottom: 10px;
- 
+    max-height: 80%;
+    max-width: 80%;
+    /* margin-left: 10%;
+    margin-bottom: 10px; */
+
   
 }
 
 
+.content * {
+  animation: spawn 2s ease;
+
+}
 
 .content h1,
 .modest-h1,
