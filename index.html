@@ -2,29 +2,155 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <title>Marked in the browser</title>
-  <style>
-    body {
-      color: black;
-    }
-  </style>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="markdown.css">
+    <script src="https://kit.fontawesome.com/cdd7771074.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <title>Project display</title>
 </head>
 
 <body>
-  <div id="content"></div>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src=https://unpkg.com/showdown/dist/showdown.min.js> </script>
+    <div class="mainContainer">
+        <div class="pojectSelector">
+            <div class="projectTitle">Projects</div>
+            <div class="projectPicker">
+                <div class="projectCategory">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openProjectList(event, 'games')">
+                            <div class="categoryItem">Game Development</div>
+                        </button>
+                        <button class="tablinks" onclick="openProjectList(event, 'web')">
+                            <div class="categoryItem">Web Development</div>
+                        </button>
+                    </div>
+                </div>
 
+                <div id="default" class="tabcontent"></div>
 
-  <script>
-    fetch('./markdown/readme.md', { mode: 'no-cors' })
-      .then(response => response.text())
-      .then(text =>
-        document.getElementById('content').innerHTML = marked(text))
-      .catch(error => console.error(error));
-  </script>
+                <div class="projectNameContainer">
+                    <div id="games" class="tabcontent">
+                        <div class="tab">
+                            <!-- <button class="tablinks">
+                                <div class="projectNameItem"><i class="fas fa-angle-double-left fa-1x"> back</i></div>
+                            </button> -->
+                            <button class="tablinks" onclick="openProjectReadme(event, 'spiderman')">
+                                <div class="projectNameItem">Spiderman</div>
+                            </button>
+                            <button class="tablinks" onclick="openProjectReadme(event, 'goblinclimber')">
+                                <div class="projectNameItem">Goblin Climber</div>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="web" class="tabcontent">
+                        <div class="tab">
+                            <button class="tablinks">
+                                <div class="projectNameItem">MTG Scanner</div>
+                            </button>
+                            <button class="tablinks">
+                                <div class="projectNameItem">Tribute</div>
+                            </button>
+                            <button class="tablinks">
+                                <div class="projectNameItem">MTG Scanner</div>
+                            </button>
+                            <button class="tablinks">
+                                <div class="projectNameItem">Tribute</div>
+                            </button>
+                            <button class="tablinks">
+                                <div class="projectNameItem">MTG Scanner</div>
+                            </button>
+                            <button class="tablinks">
+                                <div class="projectNameItem">Tribute</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+        <div class="contentPage">
+            <div id="default" class="readmeContent"></div>
+            <div id="goblinclimber" class="readmeContent">
+                <div class="tab">
+                    <div id="goblinclimberContent" class="content"></div>
+                </div>
+            </div>
+            <div id="spiderman" class="readmeContent">
+                <div class="tab">
+                    <div id="spidermanContent" class="content"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>function openProjectList(evt, projectName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(projectName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }</script>
+
+    <script>function openProjectReadme(evt, projectName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("readmeContent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(projectName).style.display = "block";
+            evt.currentTarget.className += " active";
+            loadMarkdown(projectName);
+        }</script>
+    <script>
+        openProjectReadme(null, 'default')
+    </script>
+    <script>
+        openProjectList(null, 'default')
+    </script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <script>
+        function loadMarkdown(name) {
+            fetch('https://raw.githubusercontent.com/Monogenesis/GoblinClimber/main/README.md', { mode: 'cors' })
+                .then(response => response.text())
+                .then(text =>
+                    document.getElementById(name + 'Content').innerHTML = marked(text))
+                .catch(error => console.error(error));
+        }
+    </script>
 </body>
 
 </html>
