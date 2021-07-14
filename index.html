@@ -20,7 +20,7 @@
                         <button class="categoryTablinks" onclick="openProjectList(event, 'games')">
                             <div class="categoryItem">Game Development</div>
                         </button>
-                        <button class="tablinks" onclick="openProjectList(event, 'web')">
+                        <button class="categoryTablinks" onclick="openProjectList(event, 'web')">
                             <div class="categoryItem">Web Development</div>
                         </button>
                     </div>
@@ -68,6 +68,7 @@
     </div>
     <script>
         function openProjectList(evt, projectName) {
+            resetProjectNameTabs()
             // Declare all variables
             var i, tabcontent, tablinks;
             // Get all elements with class="tabcontent" and hide them
@@ -84,6 +85,7 @@
             document.getElementById(projectName).style.display = "block";
             evt.currentTarget.className += " active";
             document.getElementById('readmeContent').style.display = "none";
+
         }
     </script>
 
@@ -108,6 +110,23 @@
             evt.currentTarget.className += " active";
             loadMarkdownFromGitHub(projectName);
             document.getElementById('readmeContent').style.display = "block";
+
+        }
+    </script>
+    <script>
+        function resetProjectNameTabs() {
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+
+            }
+
+            tablinks = document.getElementsByClassName("tablinks active");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
 
         }
     </script>
