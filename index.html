@@ -17,7 +17,7 @@
             <div class="projectPicker">
                 <div class="projectCategory">
                     <div class="tab">
-                        <button class="tablinks" onclick="openProjectList(event, 'games')">
+                        <button class="categoryTablinks" onclick="openProjectList(event, 'games')">
                             <div class="categoryItem">Game Development</div>
                         </button>
                         <button class="tablinks" onclick="openProjectList(event, 'web')">
@@ -31,14 +31,17 @@
                 <div class="projectNameContainer">
                     <div id="games" class="tabcontent">
                         <div class="tab">
-                            <!-- <button class="tablinks">
-                                <div class="projectNameItem"><i class="fas fa-angle-double-left fa-1x"> back</i></div>
-                            </button> -->
-                            <button class="tablinks" onclick="openProjectReadme(event, 'spiderman')">
-                                <div class="projectNameItem">Spiderman</div>
+                            <button class="tablinks" onclick="openProjectReadme(event, 'Pathfinder-Simulation')">
+                                <div class="projectNameItem">A* Pathfinder</div>
                             </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'goblinclimber')">
+                            <button class="tablinks" onclick="openProjectReadme(event, 'GoblinClimber')">
                                 <div class="projectNameItem">Goblin Climber</div>
+                            </button>
+                            <button class="tablinks" onclick="openProjectReadme(event, 'Stratego')">
+                                <div class="projectNameItem">Stratego</div>
+                            </button>
+                            <button class="tablinks" onclick="openProjectReadme(event, 'Spacegame')">
+                                <div class="projectNameItem">Spacegame</div>
                             </button>
                         </div>
                     </div>
@@ -47,19 +50,7 @@
                             <button class="tablinks">
                                 <div class="projectNameItem">MTG Scanner</div>
                             </button>
-                            <button class="tablinks">
-                                <div class="projectNameItem">Tribute</div>
-                            </button>
-                            <button class="tablinks">
-                                <div class="projectNameItem">MTG Scanner</div>
-                            </button>
-                            <button class="tablinks">
-                                <div class="projectNameItem">Tribute</div>
-                            </button>
-                            <button class="tablinks">
-                                <div class="projectNameItem">MTG Scanner</div>
-                            </button>
-                            <button class="tablinks">
+                            <button class="tablinks" onclick="openProjectReadme(event, 'HHN-Tribute')">
                                 <div class="projectNameItem">Tribute</div>
                             </button>
                         </div>
@@ -69,86 +60,84 @@
 
         </div>
         <div class="contentPage">
-            <div id="default" class="readmeContent"></div>
-            <div id="goblinclimber" class="readmeContent">
-                <div class="tab">
-                    <div id="goblinclimberContent" class="content"></div>
-                </div>
+            <div class="contentContainer">
+                <div id="readmeContent" class="content"></div>
             </div>
-            <div id="spiderman" class="readmeContent">
-                <div class="tab">
-                    <div id="spidermanContent" class="content"></div>
-                </div>
-            </div>
-
         </div>
 
     </div>
-    <script>function openProjectList(evt, projectName) {
+    <script>
+        function openProjectList(evt, projectName) {
             // Declare all variables
             var i, tabcontent, tablinks;
-
             // Get all elements with class="tabcontent" and hide them
             tabcontent = document.getElementsByClassName("tabcontent");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
-
             // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("categoryTablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(projectName).style.display = "block";
+            evt.currentTarget.className += " active";
+            document.getElementById('readmeContent').style.display = "none";
+        }
+    </script>
+
+    <script>
+        function openProjectReadme(evt, projectName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
             tablinks = document.getElementsByClassName("tablinks");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
 
             // Show the current tab, and add an "active" class to the link that opened the tab
-            document.getElementById(projectName).style.display = "block";
+
             evt.currentTarget.className += " active";
-        }</script>
+            loadMarkdownFromGitHub(projectName);
+            document.getElementById('readmeContent').style.display = "block";
 
-    <script>function openProjectReadme(evt, projectName) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("readmeContent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Show the current tab, and add an "active" class to the link that opened the tab
-            document.getElementById(projectName).style.display = "block";
-            evt.currentTarget.className += " active";
-            loadMarkdown(projectName);
-        }</script>
-    <script>
-        openProjectReadme(null, 'default')
+        }
     </script>
     <script>
         openProjectList(null, 'default')
     </script>
     <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
+        document.getElementById('readmeContent').style.display = "none";
+    </script>
+    <script>
+        function loadMarkdownFromGitHub(name) {
+            fetch('https://raw.githubusercontent.com/Monogenesis/' + name + '/main/README.md', { mode: 'cors' })
+                .then(response => response.text())
+                .then(text =>
+                    document.getElementById('readmeContent').innerHTML = marked(text))
+                .then(() =>
+                    document.getElementsByTagName("a")[0].setAttribute("target", "_blank"))
+                .catch(error => console.error(error));
         }
     </script>
     <script>
-        function loadMarkdown(name) {
-            fetch('https://raw.githubusercontent.com/Monogenesis/GoblinClimber/main/README.md', { mode: 'cors' })
+        function loadMarkdownLocaly(name) {
+            fetch('./markdown/' + name + '.md', { mode: 'no-cors' })
                 .then(response => response.text())
                 .then(text =>
                     document.getElementById(name + 'Content').innerHTML = marked(text))
+                .then(() =>
+                    document.getElementsByTagName("a")[0].setAttribute("target", "_blank"))
                 .catch(error => console.error(error));
+
         }
     </script>
 </body>

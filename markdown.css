@@ -109,25 +109,36 @@ body {
   width: max-content;
   white-space: normal;
   width: 1000px;
-  animation: spawn 2s ease;
- 
-}
 
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 .content p,
 .modest-p {
   font-size: 1rem;
   margin-bottom: 1.3rem;
-
+  
 }
 
-
-.content img {
+.content img{
+  
   max-height: 80%;
   max-width: 80%;
   margin-left: 10%;
   margin-bottom: 10px;
-
+ 
+  
 }
+
+
+
 .content h1,
 .modest-h1,
 .content h2,

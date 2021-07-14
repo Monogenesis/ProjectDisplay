@@ -11,6 +11,7 @@ html{
 
 }
 
+
 .mainContainer{
         /* border-color: chocolate;
         border-style: solid; */
@@ -112,15 +113,20 @@ html{
     margin-left: 100px;
     width: 100%;
     color: var(--primaryTextColor);
-
+    
+        
 }
 .contentPage img{
     display: flex;
   flex-direction: column; 
-   
+
+
 }
 
-
+.content *{
+    animation: spawn 2s ease;
+   
+}
 .tab {
     float: left;
     width: 100%;
@@ -133,13 +139,12 @@ html{
     /* color: black; */
     padding: 22px 16px;
     width: 100%;
-    border-left: none;
+    border: solid;
     text-align: left;
     cursor: pointer;
     transition: 0.75s;
     border-color: gray;
     border-width: 2px;
-    
 }
 .tab button:hover {
     background-color: var(--highlightedHoverColor);
@@ -175,3 +180,4 @@ html{
         transform: translateX(0);
     }
 }
+
