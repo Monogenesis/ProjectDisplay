@@ -86,6 +86,7 @@ a:active {
 
 html {
   font-size: 12px;
+   scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 32rem) and (max-width: 48rem) {
