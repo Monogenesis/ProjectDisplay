@@ -8,7 +8,7 @@
 
 html{
     background-color: #22272E;
-
+    scroll-behavior: smooth;
 }
 
 
@@ -26,8 +26,8 @@ html{
 
 
 .pojectSelector{
-     border-color: black;
-     border-style: solid;
+     /* border-color: black;
+     border-style: solid; */
      border-width: 5px;
      align-self: flex-start;
   
@@ -36,7 +36,7 @@ html{
  div.pojectSelector {
      position: -webkit-sticky;
      position: sticky;
-     top: 0;
+     top: 12px;
  }
 .projectTitle {
     /* border-color: blue;
@@ -44,6 +44,7 @@ html{
     padding: 10px;
     margin-bottom: 5px;
     color: #3773ff;
+    background-color: #184d7469;
     font-weight: bold;
     font-size:xx-large;
                 
