@@ -1,18 +1,6 @@
 
 
 
-:root {
-    /* --primaryTextColor: rgba(255, 255, 255, 0.644); */
-    --htmlBackgroundColor:#474753;
-    --primaryTextColor: #F4EBDB;
-    --projectTitleBackgroundColor:#363636;
-    --highlightedHoverColor: #548CA8;
-    --highlightedActiveColor: #476072;
-    --markdownTextColor: #F4EBDB;
-}
-
-
-
 html {
 
     /* background-color: #22272E; */
@@ -39,10 +27,42 @@ html {
      border-style: solid; */
      border-width: 5px;
      align-self: flex-start;
-     
-
 }
 
+.selectorHeader{
+    display: flex;
+    flex-direction: row;
+    border-color: blue;
+    border-style: solid;
+}
+
+.colorMode {
+    display: flex;
+    flex-direction: column;
+    border-color: black;
+     border-style: solid;
+     width: fit-content;
+     text-align: center;
+     margin: 0px;
+    align-self: flex-start;
+}
+
+.darkModeButton, .brightModeButton{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.darkModeButton {
+    background-color: #363636;
+    color: white;
+}
+
+.brightModeButton{
+    background-color: rgb(224, 224, 224);
+    color: black;
+}
 
  div.pojectSelector {
      position: -webkit-sticky;
@@ -128,10 +148,12 @@ html {
 .contentPage {
     border-color: rgb(124, 127, 148);
     border-style: solid;
-    margin-left: 2%;
+    margin-left: 5%;
     width: 100%;
     color: var(--primaryTextColor);
-    background-color: #363636;
+    
+    /* background-color: #363636; */
+    background-color: var(--contentBackgroundColor);
     /* background-color: #0D7377; */
         
 }

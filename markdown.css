@@ -187,8 +187,9 @@ body {
      
 }
 
-h1 {
-    text-align: center;
+h1{
+    text-align: left;
+    padding-left: 2%;
 }
 
 h2,

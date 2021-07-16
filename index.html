@@ -13,7 +13,13 @@
 <body>
     <div class="mainContainer">
         <div class="pojectSelector">
-            <div class="projectTitle">Project Gallery</div>
+            <div class='selectorHeader'>
+                <div class="projectTitle">Project Gallery</div>
+                <div class=colorMode>
+                    <button class='darkModeButton' onClick="selectDarkMode()">Dark Mode</button>
+                    <button class='brightModeButton' onClick="selectBrightMode()">Bright Mode</button>
+                </div>
+            </div>
             <div class="projectPicker">
                 <div class="projectCategory">
                     <div class="tab">
@@ -60,7 +66,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="contentPage">
             <div class="contentContainer">
@@ -69,6 +74,57 @@
         </div>
 
     </div>
+
+    <script>
+        const colorMode = [{
+            variableName: '--htmlBackgroundColor',
+            darkMode: '#474753',
+            brightMode: 'rgb(221, 221, 221)'
+        },
+        {
+            variableName: '--contentBackgroundColor',
+            darkMode: '#363636',
+            brightMode: 'rgb(224, 224, 224)'
+        },
+        {
+            variableName: '--primaryTextColor',
+            darkMode: '#F4EBDB',
+            brightMode: '#black'
+        },
+        {
+            variableName: '--projectTitleBackgroundColor',
+            darkMode: '#363636',
+            brightMode: 'rgb(224, 224, 224)'
+        },
+        {
+            variableName: '--highlightedHoverColor',
+            darkMode: '#c3c3c3',
+            brightMode: '#c3c3c3'
+        },
+        {
+            variableName: '--highlightedActiveColor',
+            darkMode: '#363636',
+            brightMode: '#959595'
+        },
+        {
+            variableName: '--markdownTextColor',
+            darkMode: '#F4EBDB',
+            brightMode: '#black'
+        }
+        ]
+
+        function selectDarkMode() {
+            colorMode.forEach(colorPreset => {
+                document.documentElement.style.setProperty(colorPreset.variableName, colorPreset.darkMode);
+            });
+        }
+        function selectBrightMode() {
+            colorMode.forEach(colorPreset => {
+                document.documentElement.style.setProperty(colorPreset.variableName, colorPreset.brightMode);
+            });
+        }
+    </script>
+    <script>selectDarkMode()</script>
     <script>
         function openProjectList(evt, projectName) {
             resetProjectNameTabs()
