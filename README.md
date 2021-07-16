@@ -1,5 +1,5 @@
 
-# Project gallery
+# Project Gallery
 
 Project to display and showcase my own projects
 
