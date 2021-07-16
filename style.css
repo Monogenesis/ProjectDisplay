@@ -1,13 +1,22 @@
 
+
+
 :root {
-    --primaryTextColor: rgba(255, 255, 255, 0.644);
-    --highlightedHoverColor: #ddd;
-    --highlightedActiveColor: #1a4d72f5;
-    /* accessible everywhere */
+    /* --primaryTextColor: rgba(255, 255, 255, 0.644); */
+    --htmlBackgroundColor:#474753;
+    --primaryTextColor: #F4EBDB;
+    --projectTitleBackgroundColor:#363636;
+    --highlightedHoverColor: #548CA8;
+    --highlightedActiveColor: #476072;
+    --markdownTextColor: #F4EBDB;
 }
 
-html{
-    background-color: #22272E;
+
+
+html {
+
+    /* background-color: #22272E; */
+    background-color:var(--htmlBackgroundColor);
     scroll-behavior: smooth;
 }
 
@@ -30,9 +39,11 @@ html{
      border-style: solid; */
      border-width: 5px;
      align-self: flex-start;
-  
+     
 
 }
+
+
  div.pojectSelector {
      position: -webkit-sticky;
      position: sticky;
@@ -41,13 +52,14 @@ html{
 .projectTitle {
     /* border-color: blue;
     border-style: solid; */
+
     padding: 10px;
     margin-bottom: 5px;
-    color: #3773ff;
-    background-color: #184d7469;
+    color: var(--primaryTextColor);
+    background-color: var(--projectTitleBackgroundColor);
     font-weight: bold;
     font-size:xx-large;
-                
+    font-family: serif;
 }
 
 .projectCategory {
@@ -103,12 +115,14 @@ html{
 }
 
 .projectNameItem{
+    
        width: max-content;
         /* border-color: rgb(245, 0, 0);
         border-style: solid; */
          animation: spawn 1s ease;
      color: var(--primaryTextColor);
      font-size: medium;
+  
 }
 
 .contentPage {
@@ -118,7 +132,8 @@ html{
     margin-left: 100px;
     width: 100%;
     color: var(--primaryTextColor);
-      background-color: #184d7469;
+    background-color: #184d7469;
+    /* background-color: #0D7377; */
         
 }
 .contentPage img{

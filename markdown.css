@@ -1,3 +1,6 @@
+
+
+
 @media print {
   *,
   *:before,
@@ -110,7 +113,7 @@ body {
   width: max-content;
   white-space: normal;
   width: 1000px;
-
+  color: var(--markdownTextColor);
 }
 @keyframes fadeIn {
   from {
@@ -231,7 +234,7 @@ flex-direction: column;
 
 body {
  
-  color: #444;
+  /* color: #444; */
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 300;
   /* margin: 0 auto; */
