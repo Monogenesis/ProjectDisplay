@@ -8,7 +8,7 @@
     --projectTitleBackgroundColor:#363636;
     --highlightedHoverColor: #548CA8;
     --highlightedActiveColor: #476072;
-    --markdownTextColor: #F4EBDB;
+    --markdownTextColor: #b4a799;
 }
 
 
@@ -132,7 +132,7 @@ html {
     margin-left: 2%;
     width: 100%;
     color: var(--primaryTextColor);
-    background-color: #184d7469;
+    background-color: #003052;
     /* background-color: #0D7377; */
         
 }
