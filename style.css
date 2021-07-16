@@ -8,7 +8,7 @@
     --projectTitleBackgroundColor:#363636;
     --highlightedHoverColor: #548CA8;
     --highlightedActiveColor: #476072;
-    --markdownTextColor: #b4a799;
+    --markdownTextColor: #F4EBDB;
 }
 
 
@@ -128,11 +128,10 @@ html {
 .contentPage {
     border-color: rgb(124, 127, 148);
     border-style: solid;
-    margin: 10px;
     margin-left: 2%;
     width: 100%;
     color: var(--primaryTextColor);
-    background-color: #003052;
+    background-color: #363636;
     /* background-color: #0D7377; */
         
 }
