@@ -182,12 +182,15 @@ flex-direction: column;
 .content h2,
 .modest-h2 {
   font-size: 2.827rem;
+  
 }
 
 .content h3,
 .modest-h3 {
   font-size: 1.999rem;
+
 }
+
 
 .content h4,
 .modest-h4 {
@@ -244,14 +247,19 @@ body {
      
 }
 
-h1,
+h1 {
+    text-align: center;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: Arimo, Helvetica, sans-serif;
-   text-align: center;
+  text-align: left;
+  padding-left: 4%;
+
 }
 
 h1,
