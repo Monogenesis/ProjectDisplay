@@ -32,15 +32,15 @@ html {
 .selectorHeader{
     display: flex;
     flex-direction: row;
-    border-color: blue;
-    border-style: solid;
+    /* border-color: blue;
+    border-style: solid; */
 }
 
 .colorMode {
+        /* border-color: black;
+        border-style: solid; */
     display: flex;
     flex-direction: column;
-    border-color: black;
-     border-style: solid;
      width: fit-content;
      text-align: center;
      margin: 0px;
@@ -52,6 +52,7 @@ html {
     width: 100%;
     height: 100%;
     padding: 10px;
+    cursor: pointer;
 }
 
 .darkModeButton {
