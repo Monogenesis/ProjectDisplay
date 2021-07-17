@@ -1,5 +1,5 @@
 
-# Project Gallery
+# Project Gallery ![github](https://raw.githubusercontent.com/Monogenesis/ProjectGallery/main/GitHub-Mark-Light-32px.png)
 
 Project to display and showcase my own projects
 
