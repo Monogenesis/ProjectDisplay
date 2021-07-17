@@ -4,8 +4,10 @@
 html {
 
     /* background-color: #22272E; */
-    background-color:var(--htmlBackgroundColor);
+    background-color: var(--htmlBackgroundColor);
     scroll-behavior: smooth;
+    background: var(--backgroundImage);
+    background-attachment: fixed;
 }
 
 
@@ -92,6 +94,7 @@ html {
     align-content: stretch;
     justify-content: flex-start;
     height: max-content;
+    background-color: var(--htmlBackgroundColor);
  
 }
 .projectCategory .categoryItem {
@@ -125,7 +128,7 @@ html {
     border-style: solid; */
     display: flex;
     flex-direction: column;
-
+  background-color: var(--htmlBackgroundColor);
     
 }
 
