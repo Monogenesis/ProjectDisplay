@@ -23,9 +23,9 @@ html {
         border-width: 5px;
         display: flex;
         flex-direction: row;
+        margin-left: 3%;
         white-space: nowrap;
-        width: min-content;
-        /* width: 100%; */
+        width: 90%;
     }
 
 
@@ -155,10 +155,11 @@ html {
 }
 
 .contentPage {
+
     border-color: rgb(124, 127, 148);
     border-style: solid;
     margin-left: 5%;
-    width: 100%;
+    width: fit-content;
     color: var(--primaryTextColor);
     
     /* background-color: #363636; */

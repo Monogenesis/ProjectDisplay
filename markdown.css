@@ -51,9 +51,10 @@ body {
 
 .content {
   white-space: normal;
-  width: max-content;
-  white-space: normal;
-  width: 1000px;
+  /* width: max-content; */
+  width: auto;
+  min-width: fit-content;
+  max-width: 1000px;
   color: var(--markdownTextColor);
 }
 @keyframes fadeIn {
