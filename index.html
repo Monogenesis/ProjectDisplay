@@ -82,10 +82,16 @@
     <script>
         const colorMode = [
             {
+                variableName: '--githubLogo',
+                darkMode: 'url(./image/brightGithubLogo.png)',
+                brightMode: 'url(./image/darkGithubLogo.png)'
+            },
+            {
                 variableName: '--backgroundImage',
                 darkMode: 'url(./image/darkBackground.png)',
                 brightMode: 'url(./image/brightBackground.png)'
-            }, {
+            },
+            {
                 variableName: '--htmlBackgroundColor',
                 darkMode: '#474753',
                 brightMode: 'rgb(221, 221, 221)'
@@ -207,14 +213,27 @@
     </script>
     <script>
         function loadMarkdownFromGitHub(name) {
-            fetch('https://raw.githubusercontent.com/Monogenesis/' + name + '/main/README.md', { mode: 'cors' })
+            var projectURL = 'https://raw.githubusercontent.com/Monogenesis/' + name;
+            fetch(projectURL + '/main/README.md', { mode: 'cors' })
                 .then(response => response.text())
                 .then(text =>
                     document.getElementById('readmeContent').innerHTML = marked(text))
                 .then(() =>
-                    document.getElementsByTagName("a")[0].setAttribute("target", "_blank"))
+                    Array.prototype.slice.call(document.getElementsByTagName("h1")).forEach(element => {
+                        var githubLink = document.createElement('a');
+                        githubLink.setAttribute('href', 'https://github.com/Monogenesis/' + name);
+                        var githubImg = document.createElement('img');
+                        githubImg.setAttribute('class', 'githubImageIcon');
+                        githubLink.appendChild(githubImg);
+                        element.appendChild(githubLink)
+                    })
+                ).then(() =>
+                    Array.prototype.slice.call(document.getElementsByTagName("a")).forEach(element => {
+                        element.setAttribute("target", "_blank")
+                    }))
                 .catch(error => console.error(error));
         }
+
     </script>
     <script>
         function loadMarkdownLocaly(name) {

@@ -10,6 +10,12 @@ html {
     background-attachment: fixed;
 }
 
+.githubImageIcon{
+    
+    margin-left: 10px;
+    content: var(--githubLogo);
+    min-width: 40px;
+}
 
 .mainContainer{
         /* border-color: chocolate;
@@ -20,7 +26,6 @@ html {
         white-space: nowrap;
         width: min-content;
         /* width: 100%; */
-   
     }
 
 
