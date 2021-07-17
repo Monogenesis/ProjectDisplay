@@ -5,7 +5,7 @@ Project to display and showcase my own projects
 
 ## Demo
 
-https://monogenesis.github.io/ProjectDisplay/
+https://monogenesis.github.io/ProjectGallery/
 
 ## Lessons Learned
 
