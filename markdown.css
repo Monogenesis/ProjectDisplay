@@ -15,6 +15,7 @@ pre {
 a,
 a:visited {
   color: #3498db;
+  width: fit-content;
 }
 
 a:hover,
@@ -75,16 +76,17 @@ body {
    margin-left: 5%;
 }
 .content p  {
-display: flex;
-flex-direction: column;
-
+  display: block;
+  width: fit-content;
 }
 .content p img{
-    
     align-self: center;
     padding: 10px;
     background-color: black;
 }
+
+
+
 .content img{
     max-height: 80%;
     max-width: 80%;
