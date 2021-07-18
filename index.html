@@ -12,60 +12,67 @@
 
 <body>
     <div class="mainContainer">
-        <div class="pojectSelector">
-            <div class='selectorHeader'>
-                <div class="projectTitle">Project Gallery</div>
-                <div class=colorMode>
-                    <button class='darkModeButton' onClick="selectDarkMode()">Dark Mode</button>
-                    <button class='brightModeButton' onClick="selectBrightMode()">Bright Mode</button>
-                </div>
-            </div>
-            <div class="projectPicker">
-                <div class="projectCategory">
-                    <div class="tab">
-                        <button class="categoryTablinks" onclick="openProjectList(event, 'games')">
-                            <div class="categoryItem">Game Development</div>
-                        </button>
-                        <button class="categoryTablinks" onclick="openProjectList(event, 'web')">
-                            <div class="categoryItem">Web Development</div>
-                        </button>
+        <div id=navbar>
+            <div class="pojectSelector">
+                <div class='selectorHeader'>
+                    <div class=projectTitle>
+                        <div class="title">Project Gallery</div>
+                        <a href="mailto: ama.zittel@gmail.com">
+                            <div class="author">by Amadeus Zittel</div>
+                        </a>
+                    </div>
+                    <div class=colorMode>
+                        <button class='darkModeButton' onClick="selectDarkMode()">Dark Mode</button>
+                        <button class='brightModeButton' onClick="selectBrightMode()">Bright Mode</button>
                     </div>
                 </div>
-                <div id="default" class="tabcontent"></div>
-                <div class="projectNameContainer">
-                    <div id="games" class="tabcontent">
+                <div class="projectPicker">
+                    <div class="projectCategory">
                         <div class="tab">
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Spiderman-Controller')">
-                                <div class="projectNameItem">Spiderman</div>
+                            <button class="categoryTablinks" onclick="openProjectList(event, 'games')">
+                                <div class="categoryItem">Game Development</div>
                             </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Pathfinder-Simulation')">
-                                <div class="projectNameItem">A* Pathfinder</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'GoblinClimber')">
-                                <div class="projectNameItem">Goblin Climber</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Arkanoid')">
-                                <div class="projectNameItem">Arkanoid</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Stratego')">
-                                <div class="projectNameItem">Stratego</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Spacegame')">
-                                <div class="projectNameItem">Spacegame</div>
+                            <button class="categoryTablinks" onclick="openProjectList(event, 'web')">
+                                <div class="categoryItem">Web Development</div>
                             </button>
                         </div>
                     </div>
-                    <div id="web" class="tabcontent">
-                        <div class="tab">
-                            <button class="tablinks" onclick="openProjectReadme(event, 'ProjectGallery')">
-                                <div class="projectNameItem">Project Gallery</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'HHN-Tribute')">
-                                <div class="projectNameItem">Tribute</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Streaming-Page')">
-                                <div class="projectNameItem">Streaming Page</div>
-                            </button>
+                    <div id="default" class="tabcontent"></div>
+                    <div class="projectNameContainer">
+                        <div id="games" class="tabcontent">
+                            <div class="tab">
+                                <button class="tablinks" onclick="openProjectReadme(event, 'Spiderman-Controller')">
+                                    <div class="projectNameItem">Spiderman</div>
+                                </button>
+                                <button class="tablinks" onclick="openProjectReadme(event, 'Pathfinder-Simulation')">
+                                    <div class="projectNameItem">A* Pathfinder</div>
+                                </button>
+                                <button class="tablinks" onclick="openProjectReadme(event, 'GoblinClimber')">
+                                    <div class="projectNameItem">Goblin Climber</div>
+                                </button>
+                                <button class="tablinks" onclick="openProjectReadme(event, 'Arkanoid')">
+                                    <div class="projectNameItem">Arkanoid</div>
+                                </button>
+                                <button class="tablinks" onclick="openProjectReadme(event, 'Stratego')">
+                                    <div class="projectNameItem">Stratego</div>
+                                </button>
+                                <button class="tablinks" onclick="openProjectReadme(event, 'Spacegame')">
+                                    <div class="projectNameItem">Spacegame</div>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="web" class="tabcontent">
+                            <div class="tab">
+                                <button class="tablinks" onclick="openProjectReadme(event, 'ProjectGallery')">
+                                    <div class="projectNameItem">Project Gallery</div>
+                                </button>
+                                <button class="tablinks" onclick="openProjectReadme(event, 'HHN-Tribute')">
+                                    <div class="projectNameItem">Tribute</div>
+                                </button>
+                                <button class="tablinks" onclick="openProjectReadme(event, 'Streaming-Page')">
+                                    <div class="projectNameItem">Streaming Page</div>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -245,6 +252,23 @@
                     document.getElementsByTagName("a")[0].setAttribute("target", "_blank"))
                 .catch(error => console.error(error));
 
+        }
+    </script>
+    <script>
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+        if (window.innerWidth <= 1000) {
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function () {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("navbar").style.top = "0";
+                } else {
+                    document.getElementById("navbar").style.top = "-100px";
+                }
+                prevScrollpos = currentScrollPos;
+            }
+        } else {
+            document.getElementById("navbar").style.top = "0";
         }
     </script>
 </body>
