@@ -7,15 +7,11 @@ html {
     background-color: var(--htmlBackgroundColor);
     background: var(--backgroundImage);
     background-attachment: fixed;
-         position: relative;
+     overflow: auto;
+       scroll-behavior: smooth;
+         -webkit-overflow-scrolling: touch;
 }
 
-body{
-     height : 100%;
-     position: relative;
-      scroll-behavior: smooth;
-      overflow: auto;
-}
 
 .githubImageIcon{
     
