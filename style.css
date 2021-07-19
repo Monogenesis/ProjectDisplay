@@ -7,14 +7,11 @@ html {
     background-color: var(--htmlBackgroundColor);
     background: var(--backgroundImage);
     background-attachment: fixed;
-     overflow: auto;
-       scroll-behavior: smooth;
-         -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 
 .githubImageIcon{
-    
     margin-left: 10px;
     content: var(--githubLogo);
     min-width: 40px;
@@ -245,7 +242,19 @@ html {
 }
 
  @media only screen and (max-width: 1000px) {
+     html{
+   position: fixed;
+   height: 100%;
+   overflow: hidden;
+     }
 
+ body {
+     width: 100vw;
+     height: 100vh;
+     overflow-y: scroll;
+     overflow-x: hidden;
+     -webkit-overflow-scrolling: touch;
+ }
      .mainContainer {
          display: flex;
          flex-direction: column;
