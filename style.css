@@ -7,12 +7,14 @@ html {
     background-color: var(--htmlBackgroundColor);
     background: var(--backgroundImage);
     background-attachment: fixed;
+         position: relative;
 }
 
 body{
+     height : 100%;
+     position: relative;
       scroll-behavior: smooth;
       overflow: auto;
-      overscroll-behavior: none;
 }
 
 .githubImageIcon{
@@ -222,14 +224,9 @@ body{
   width: 100%;
 }
 #navbar {
-    /* Black background color */
     width: fit-content;
-    /* Make it stick/fixed */
     top: 0;
-    /* Stay on top */
-    /* Full width */
     transition: top 0.3s;
-    /* Transition effect when sliding down (and up) */
 }
 
 @keyframes spawn {
