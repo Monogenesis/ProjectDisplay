@@ -45,9 +45,7 @@ html {
   }
 }
 
-body {
-  line-height: 1.85;
-}
+
 
 .content {
   white-space: normal;
@@ -82,8 +80,6 @@ body {
 }
 .content p img{
     align-self: center;
-    padding: 10px;
-    background-color: black;
 }
 
 
@@ -198,6 +194,7 @@ body {
   max-width: 100%;
   line-height: 1.45;
   padding: .25rem;
+    line-height: 1.85;
      
 }
 

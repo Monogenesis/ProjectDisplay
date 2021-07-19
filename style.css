@@ -242,28 +242,27 @@ html {
 }
 
  @media only screen and (max-width: 1000px) {
-     html{
-   position: fixed;
+     /* html{
    height: 100%;
-   overflow: hidden;
+      position: absolute;
      }
 
  body {
-     width: 100vw;
-     height: 100vh;
-     overflow-y: scroll;
-     overflow-x: hidden;
-     -webkit-overflow-scrolling: touch;
+     top: 35px;
+       overflow: auto;
+     height: 100%;
+      position: relative;
  }
      .mainContainer {
          display: flex;
          flex-direction: column;
-         width: 100%;
+         width: 90%;
          margin: 0;
      }
      .pojectSelector {
-         zoom: 0.5;
+         zoom: 0.45;
          flex-direction: row;
+         flex-wrap: wrap;
      }
      .projectPicker{
          flex-direction: column;
@@ -272,6 +271,9 @@ html {
          margin-top: 10%;
          margin-left: 0px;
          top: 25%
+     }
+     .tabcontent{
+         width: 100%;
      }
      .tab{
              display: flex;
@@ -282,6 +284,6 @@ html {
       }
       #navbar{
           position: fixed;
-      }
+      } */
 
  }
