@@ -8,6 +8,11 @@ html {
     scroll-behavior: smooth;
     background: var(--backgroundImage);
     background-attachment: fixed;
+     
+}
+
+body{
+     overscroll-behavior-y: none;
 }
 
 .githubImageIcon{
@@ -246,6 +251,7 @@ html {
 }
 
  @media only screen and (max-width: 1000px) {
+
      .mainContainer {
          display: flex;
          flex-direction: column;
