@@ -7,12 +7,12 @@ html {
     background-color: var(--htmlBackgroundColor);
     background: var(--backgroundImage);
     background-attachment: fixed;
-     
 }
 
 body{
       scroll-behavior: smooth;
       overflow: auto;
+      overscroll-behavior: none;
 }
 
 .githubImageIcon{
@@ -20,6 +20,7 @@ body{
     margin-left: 10px;
     content: var(--githubLogo);
     min-width: 40px;
+    
 }
 
 .mainContainer{
