@@ -248,15 +248,7 @@ html {
 }
 
  @media only screen and (max-width: 1000px) {
-     html{
-   height: 100%;
-      position: absolute;
-     }
 
- body {
-     display: flex;
-     margin: 0px;
- }
  a {
      margin-right: 10px;
  }
