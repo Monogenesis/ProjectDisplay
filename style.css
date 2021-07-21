@@ -44,7 +44,7 @@ html {
     border-style: solid; */
     display: flex;
     flex-direction: col;
-
+    background-color: var(--projectTitleBackgroundColor);
 }
 
 .colorMode {
@@ -57,8 +57,12 @@ html {
      text-align: center;
      margin: 0px;
     align-self: flex-start;
+  
 }
-
+     .projectSelector {
+         display: flex;
+         flex-direction: column;
+     }
 .darkModeButton, .brightModeButton{
     display: flex;
     width: 100%;
@@ -89,7 +93,7 @@ html {
     padding: 10px;
     margin-bottom: 5px;
     color: var(--primaryTextColor);
-    background-color: var(--projectTitleBackgroundColor);
+
     font-weight: bold;
     font-size:x-large;
     font-family: serif;
@@ -98,6 +102,7 @@ html {
 .author{
     font-size: 1.2rem;
     font-weight: lighter;
+    text-align: center;
 }
 
 .projectCategory {
@@ -207,19 +212,16 @@ html {
     
 }
 .tab button.active {
-    background-color: var(--highlightedActiveColor);
-    
-   
+    background-color: var(--highlightedActiveColor); 
 }
 .tabcontent {
   float: left;
   padding: 0px 0px;
   width: 100%;
 }
-#navbar {
-    /* width: fit-content;
-    top: 0;
-    transition: top 0.3s; */
+.menuAndTitle{
+    display: flex;
+    flex-direction: row;
 }
 
 @keyframes spawn {
@@ -241,49 +243,101 @@ html {
     }
 }
 
+.dropdownMenu {
+    display: none;
+}
+
  @media only screen and (max-width: 1000px) {
-     /* html{
+     html{
    height: 100%;
       position: absolute;
      }
 
  body {
-     top: 35px;
-       overflow: auto;
-     height: 100%;
-      position: relative;
+     display: flex;
+     margin: 0px;
+ }
+ a {
+     margin-right: 10px;
  }
      .mainContainer {
          display: flex;
          flex-direction: column;
          width: 90%;
-         margin: 0;
      }
-     .pojectSelector {
-         zoom: 0.45;
+
+      .colorMode {
+         /* zoom: 0.45; */
+           display: flex;
          flex-direction: row;
-         flex-wrap: wrap;
+       
+     }
+     .projectSelector {
+              display: flex;
+        flex-direction: column;
+     }
+     .dropdownMenu {
+          position: relative;
+          display: inline-block;
+     }
+
+
+   .openMobileNavButton {
+    display: block;
+    width: 80px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 20px;
+    font-size: x-large;
+
+    }
+  
+     .selectorHeader{
+        padding-left: 5px;
+        padding-right: 5px;
+        height: 100%;
+     }
+     .projectTitle{
+        display: flex;
+        flex-direction:column;
+        padding: 0px;
+        margin-bottom: 0px;
+        font-size: x-large;
+     }
+     .author{
+        display: none;
+        align-self: center;
+        height: min-content;
      }
      .projectPicker{
-         flex-direction: column;
+         flex-direction: row;
+         display: block;
      }
      .contentPage {
-         margin-top: 10%;
+         margin-top: 1%;
          margin-left: 0px;
-         top: 25%
+         top: 25%;
+         width: 100%;
      }
      .tabcontent{
          width: 100%;
      }
      .tab{
              display: flex;
-             flex-direction: row;
+             flex-direction: column;
      }
       div.pojectSelector {
           position: relative;
       }
-      #navbar{
+      /* #navbar{
           position: fixed;
       } */
+    .menuAndTitle {
+        display: flex;
+        flex-direction: row;
+    }
 
+    .projectCategory .categoryItem {
+        font-size:1.4rem;
+    }
  }
