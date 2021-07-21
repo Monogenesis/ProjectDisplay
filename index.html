@@ -95,6 +95,11 @@
                 brightMode: 'url(./image/darkGithubLogo.png)'
             },
             {
+                variableName: '--hColor',
+                darkMode: '#F4EBDB',
+                brightMode: 'black'
+            },
+            {
                 variableName: '--backgroundImage',
                 darkMode: 'url(./image/darkBackground.png)',
                 brightMode: 'url(./image/brightBackground.png)'
@@ -111,8 +116,8 @@
             },
             {
                 variableName: '--primaryTextColor',
-                darkMode: '#F4EBDB',
-                brightMode: '#black'
+                darkMode: 'white',
+                brightMode: 'black'
             },
             {
                 variableName: '--projectTitleBackgroundColor',
@@ -131,7 +136,7 @@
             },
             {
                 variableName: '--markdownTextColor',
-                darkMode: '#F4EBDB',
+                darkMode: 'white',
                 brightMode: '#black'
             }
         ]
@@ -147,7 +152,7 @@
             });
         }
     </script>
-    <script>selectDarkMode()</script>
+    <script>selectBrightMode()</script>
     <script>
         function openProjectList(evt, projectName) {
             resetProjectNameTabs()
