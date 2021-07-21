@@ -217,9 +217,9 @@ html {
   width: 100%;
 }
 #navbar {
-    width: fit-content;
+    /* width: fit-content;
     top: 0;
-    transition: top 0.3s;
+    transition: top 0.3s; */
 }
 
 @keyframes spawn {
