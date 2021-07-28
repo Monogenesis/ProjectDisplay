@@ -145,7 +145,12 @@
             {
                 variableName: '--markdownTextColor',
                 darkMode: 'white',
-                brightMode: '#black'
+                brightMode: 'black'
+            },
+            {
+                variableName: '--markdownHeaderBottomBorder',
+                darkMode: 'white',
+                brightMode: 'black'
             }
         ]
 
@@ -160,10 +165,13 @@
             });
         }
     </script>
-    <script>selectBrightMode()</script>
+    <script>selectDarkMode()</script>
     <script>
         function openProjectList(evt, projectName) {
             resetProjectNameTabs()
+            if (projectName === "default") {
+                return;
+            }
             // Declare all variables
             var i, tabcontent, tablinks;
             // Get all elements with class="tabcontent" and hide them

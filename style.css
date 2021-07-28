@@ -27,6 +27,7 @@ html {
         margin-left: 3%;
         white-space: nowrap;
         width: 90%;
+        overflow: hidden;
 }
 
 
@@ -36,7 +37,6 @@ html {
      border-style: solid; */
      display: flex;
      flex-direction: column;
-     width: min-content;
 }
 
 .selectorHeader{
@@ -59,9 +59,11 @@ html {
     align-self: flex-start;
   
 }
-     .projectSelector {
+
+.projectSelector {
          display: flex;
          flex-direction: column;
+        position: fixed;
      }
 .darkModeButton, .brightModeButton{
     display: flex;
@@ -82,9 +84,10 @@ html {
 }
 
  div.pojectSelector {
-     position: -webkit-sticky;
-     position: sticky;
-     top: 12px;
+    
+     /* position: -webkit-sticky;
+     position: sticky; */
+     /* top: 12px; */
  }
 .projectTitle {
     /* border-color: blue;
@@ -116,6 +119,7 @@ html {
     height: min-content;
     width: min-content;
     background-color: var(--htmlBackgroundColor);
+    box-shadow: 10px 5px 10px 1px rgb(65, 65, 65);
  
 }
 .projectCategory .categoryItem {
@@ -142,6 +146,7 @@ html {
     flex-direction: row;
     width: min-content;
 
+
 }
 
 .projectNameContainer {
@@ -149,7 +154,8 @@ html {
     border-style: solid; */
     display: flex;
     flex-direction: column;
-  background-color: var(--htmlBackgroundColor);
+    background-color: var(--htmlBackgroundColor);
+    box-shadow: 5px 5px 10px 1px rgb(65, 65, 65);
     
 }
 
@@ -169,19 +175,18 @@ html {
 
     border-color: rgb(124, 127, 148);
     border-style: solid;
-    margin-left: 5%;
+    margin-left: 450px;
     width: fit-content;
     color: var(--primaryTextColor);
     
     /* background-color: #363636; */
     background-color: var(--contentBackgroundColor);
     /* background-color: #0D7377; */
-        
+        box-shadow: 10px 15px 10px 1px rgb(65, 65, 65);
 }
 .contentPage img{
     display: flex;
   flex-direction: column; 
-
 
 }
 
@@ -247,7 +252,7 @@ html {
     display: none;
 }
 
- @media only screen and (max-width: 1000px) {
+ /* @media only screen and (max-width: 1000px) {
 
  a {
      margin-right: 10px;
@@ -259,7 +264,6 @@ html {
      }
 
       .colorMode {
-         /* zoom: 0.45; */
            display: flex;
          flex-direction: row;
        
@@ -321,9 +325,6 @@ html {
       div.pojectSelector {
           position: relative;
       }
-      /* #navbar{
-          position: fixed;
-      } */
     .menuAndTitle {
         display: flex;
         flex-direction: row;
@@ -332,4 +333,4 @@ html {
     .projectCategory .categoryItem {
         font-size:1.4rem;
     }
- }
+ } */

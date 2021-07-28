@@ -46,7 +46,6 @@ html {
 }
 
 
-
 .content {
   white-space: normal;
   /* width: max-content; */
@@ -176,9 +175,9 @@ html {
   max-width: 100%;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+/* @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
 
-@import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic); */
 
 .content html {
   font-size: 18px;
@@ -213,13 +212,13 @@ h6 {
   font-family: Arimo, Helvetica, sans-serif;
   text-align: left;
   padding-left: 4%;
-    color: var(--hColor);
+  color: var(--hColor);
 }
 
 h1,
 h2,
 h3 {
-  border-bottom: 2px solid #fafafa;
+  border-bottom: 2px solid var(--markdownHeaderBottomBorder);
   margin-bottom: 1.15rem;
   padding-bottom: .5rem;
  
