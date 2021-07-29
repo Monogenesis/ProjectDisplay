@@ -27,7 +27,7 @@ html {
         margin-left: 3%;
         white-space: nowrap;
         width: 90%;
-        overflow: hidden;
+        /* overflow: hidden; */
 }
 
 
@@ -318,7 +318,6 @@ html {
         margin-left: 0px;
         top: 25%;
         width: 95%;
-        overflow-y:auto;
         position:relative;
      }
      
