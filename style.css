@@ -21,7 +21,7 @@ html {
 .mainContainer{
         /* border-color: chocolate;
         border-style: solid; */
-        border-width: 5px;
+        /* border-width: 5px; */
         display: flex;
         flex-direction: row;
         margin-left: 3%;
@@ -252,8 +252,7 @@ html {
     display: none;
 }
 
- /* @media only screen and (max-width: 1000px) {
-
+ @media only screen and (max-width: 950px) {
  a {
      margin-right: 10px;
  }
@@ -271,6 +270,7 @@ html {
      .projectSelector {
               display: flex;
         flex-direction: column;
+        position: relative;
      }
      .dropdownMenu {
           position: relative;
@@ -307,14 +307,21 @@ html {
      }
      .projectPicker{
          flex-direction: row;
-         display: block;
+         display: flex;
+     }
+     #projectPicker{
+         display: flex;
+        flex-direction: row;
      }
      .contentPage {
-         margin-top: 1%;
-         margin-left: 0px;
-         top: 25%;
-         width: 100%;
+        margin-top: 1%;
+        margin-left: 0px;
+        top: 25%;
+        width: 95%;
+        overflow-y:auto;
+        position:relative;
      }
+     
      .tabcontent{
          width: 100%;
      }
@@ -329,8 +336,8 @@ html {
         display: flex;
         flex-direction: row;
     }
-
+    
     .projectCategory .categoryItem {
         font-size:1.4rem;
     }
- } */
+ }

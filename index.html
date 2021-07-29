@@ -213,7 +213,8 @@
 
             evt.currentTarget.className += " active";
             loadMarkdownFromGitHub(projectName);
-            var readme = document.getElementById('readmeContent').style.display = "block";
+            var readme = document.getElementById('readmeContent');
+            readme.style.display = "block"
             if (window.screen.width >= 2000) {
                 window.scrollTo(0, 0);
             } else {
@@ -246,6 +247,10 @@
     </script>
     <script>
         function loadMarkdownFromGitHub(name) {
+
+            if (screen.width <= 950) {
+                document.getElementById("projectPicker").style.display = 'none';
+            }
             var projectURL = 'https://raw.githubusercontent.com/Monogenesis/' + name;
             fetch(projectURL + '/main/README.md', { mode: 'cors' })
                 .then(response => response.text())
