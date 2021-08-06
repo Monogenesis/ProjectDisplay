@@ -90,6 +90,7 @@
                 </div>
             </div>
         </div>
+
         <div class="contentPage">
             <div class="contentContainer">
                 <div id="readmeContent" class="content"></div>
@@ -269,7 +270,29 @@
                 ).then(() =>
                     Array.prototype.slice.call(document.getElementsByTagName("a")).forEach(element => {
                         element.setAttribute("target", "_blank")
-                    }))
+                    })).then(() => {
+                        // console.log(document.getElementById('readmeContent').innerHTML)
+                        Array.prototype.slice.call(document.getElementsByTagName("a")).forEach(element => {
+                            var hrefFromATag = element.href;
+
+                            if (hrefFromATag.toString().startsWith("https://www.youtube.com")) {
+                                var videoFrame = document.createElement('iframe');
+                                videoFrame.setAttribute('id', 'youtubeVideo');
+                                videoFrame.setAttribute('allowfullscreen', '');
+                                videoFrame.setAttribute('src', hrefFromATag.replace("watch?v=", "embed/")); // + '?rel=0&amp;vq=hd720'
+                                videoFrame.setAttribute('title', "YouTube video player");
+                                videoFrame.setAttribute('allow', "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+                                videoFrame.setAttribute('frameborder', "0");
+
+                                var videoContainer = document.createElement('div');
+                                videoContainer.setAttribute('id', 'videoContainer');
+                                videoContainer.appendChild(videoFrame);
+                                element.appendChild(document.createElement('br'));
+                                element.appendChild(videoContainer);
+                            }
+
+                        })
+                    })
                 .catch(error => console.error(error));
         }
 

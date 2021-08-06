@@ -76,7 +76,8 @@ html {
 }
 .content p  {
   display: block;
-  width: fit-content;
+  /* width: fit-content; */
+  width: 90%;
 }
 .content p img{
     align-self: center;
