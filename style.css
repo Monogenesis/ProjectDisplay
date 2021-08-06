@@ -127,8 +127,14 @@ html {
     color: var(--primaryTextColor);
     font-size: medium;
     font-weight: bold;
+ 
 
-
+}
+.categoryTablinks{
+   border-radius: 8%;
+}
+.tablinks{
+       border-radius: 8%;
 }
 
 .projectCategoryBack{
