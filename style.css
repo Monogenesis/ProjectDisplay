@@ -108,8 +108,6 @@ div.pojectSelector {
   justify-content: flex-start;
   height: min-content;
   width: min-content;
-  background-color: var(--htmlBackgroundColor);
-  box-shadow: 10px 5px 10px 1px rgb(65, 65, 65);
 }
 .projectCategory .categoryItem {
   height: 23px;
@@ -117,11 +115,14 @@ div.pojectSelector {
   font-size: medium;
   font-weight: bold;
 }
-.categoryTablinks {
-  border-radius: 8%;
-}
+.categoryTablinks,
 .tablinks {
   border-radius: 8%;
+  box-shadow: 10px 5px 10px 1px rgb(65, 65, 65);
+}
+
+.tab {
+  background-color: var(--htmlBackgroundColor);
 }
 
 #videoContainer {
@@ -160,8 +161,6 @@ iframe {
     border-style: solid; */
   display: flex;
   flex-direction: column;
-  background-color: var(--htmlBackgroundColor);
-  box-shadow: 5px 5px 10px 1px rgb(65, 65, 65);
 }
 
 .projectNameItem {
@@ -193,11 +192,12 @@ iframe {
 .tab {
   float: left;
   width: 100%;
+  background-color: inherit;
 }
 
 .tab button {
   display: flex;
-  background-color: inherit;
+
   padding: 22px 16px;
   width: 100%;
   border: solid;

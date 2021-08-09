@@ -1,13 +1,10 @@
-
-
-
 .content pre,
 code {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
 pre {
-  padding: .5rem;
+  padding: 0.5rem;
   line-height: 1.25;
   overflow-x: scroll;
 }
@@ -30,7 +27,7 @@ a:active {
 
 html {
   font-size: 12px;
-   scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 32rem) and (max-width: 48rem) {
@@ -44,7 +41,6 @@ html {
     font-size: 16px;
   }
 }
-
 
 .content {
   white-space: normal;
@@ -71,33 +67,27 @@ html {
   margin-right: 5%;
 }
 
-.content li{
-   margin-left: 5%;
+.content li {
+  margin-left: 5%;
 }
-.content p  {
+.content p {
   display: block;
   /* width: fit-content; */
   width: 90%;
 }
-.content p img{
-    align-self: center;
+.content p img {
+  align-self: center;
 }
 
-
-
-.content img{
-    max-height: 80%;
-    max-width: 80%;
-    /* margin-left: 10%;
+.content img {
+  max-height: 80%;
+  max-width: 80%;
+  /* margin-left: 10%;
     margin-bottom: 10px; */
-
-  
 }
-
 
 .content * {
   animation: spawn 2s ease;
-
 }
 
 .content h1,
@@ -108,18 +98,18 @@ html {
 .modest-h3,
 .content h4,
 .modest-h4 {
-  margin: 1.414rem 0 .5rem;
+  margin: 1.414rem 0 0.5rem;
   font-weight: inherit;
   line-height: 1.42;
 }
 
-.content h1{
+.content h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.content h1 img{
+.content h1 img {
   height: 100%;
   width: min-content;
 }
@@ -133,15 +123,12 @@ html {
 .content h2,
 .modest-h2 {
   font-size: 2.827rem;
-  
 }
 
 .content h3,
 .modest-h3 {
   font-size: 1.999rem;
-
 }
-
 
 .content h4,
 .modest-h4 {
@@ -155,17 +142,15 @@ html {
 
 .content h6,
 .modest-h6 {
-  font-size: .88rem;
+  font-size: 0.88rem;
 }
 
 .content small,
 .modest-small {
-  font-size: .707em;
+  font-size: 0.707em;
 }
 
 /* https://github.com/mrmrs/fluidity */
-
-
 
 .content canvas,
 .content iframe,
@@ -183,26 +168,23 @@ html {
 .content html {
   font-size: 18px;
   max-width: 100%;
-
 }
 
 body {
- 
   /* color: #444; */
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 300;
   /* margin: 0 auto; */
   max-width: 100%;
   line-height: 1.45;
-  padding: .25rem;
-    line-height: 1.85;
-     
+  padding: 0.25rem;
+  line-height: 1.85;
 }
 
-h1{
-    text-align: left;
-    padding-left: 2%;
-        color: var(--hColor);
+h1 {
+  text-align: left;
+  padding-left: 2%;
+  color: var(--headerColor);
 }
 
 h2,
@@ -213,7 +195,7 @@ h6 {
   font-family: Arimo, Helvetica, sans-serif;
   text-align: left;
   padding-left: 4%;
-  color: var(--hColor);
+  color: var(--headerColor);
 }
 
 h1,
@@ -221,8 +203,7 @@ h2,
 h3 {
   border-bottom: 2px solid var(--markdownHeaderBottomBorder);
   margin-bottom: 1.15rem;
-  padding-bottom: .5rem;
- 
+  padding-bottom: 0.5rem;
 }
 
 blockquote {
@@ -234,9 +215,6 @@ pre,
 code {
   background-color: #000000;
 }
-
-
-
 
 @keyframes spawn {
   0% {
