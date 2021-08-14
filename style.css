@@ -105,6 +105,7 @@ div.pojectSelector {
   display: flex;
   flex-direction: column;
   /* align-content: stretch; */
+  background-color: var(--htmlBackgroundColor);
   justify-content: flex-start;
   height: min-content;
   width: min-content;
@@ -119,10 +120,6 @@ div.pojectSelector {
 .tablinks {
   border-radius: 8%;
   box-shadow: 10px 5px 10px 1px rgb(65, 65, 65);
-}
-
-.tab {
-  background-color: var(--htmlBackgroundColor);
 }
 
 #videoContainer {
@@ -159,6 +156,7 @@ iframe {
 .projectNameContainer {
   /* border-color: green;
     border-style: solid; */
+  background-color: var(--htmlBackgroundColor);
   display: flex;
   flex-direction: column;
 }
@@ -197,7 +195,7 @@ iframe {
 
 .tab button {
   display: flex;
-
+  background-color: inherit;
   padding: 22px 16px;
   width: 100%;
   border: solid;
