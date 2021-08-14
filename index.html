@@ -38,59 +38,61 @@
             </div>
             <div class="projectPicker" id="projectPicker">
                 <div class="projectCategory">
-                    <div class="tab">
-                        <button class="categoryTablinks" onclick="openProjectList(event, 'games')">
-                            <div class="categoryItem">Game Development</div>
-                        </button>
-                        <button class="categoryTablinks" onclick="openProjectList(event, 'web')">
-                            <div class="categoryItem">Web Development</div>
-                        </button>
-                    </div>
-                </div>
-                <div id="default" class="tabcontent"></div>
-                <div class="projectNameContainer">
-                    <div id="games" class="tabcontent">
-                        <div class="tab">
-                            <button class="tablinks" onclick="openProjectReadme(event, 'XMath')">
-                                <div class="projectNameItem">XMath</div>
+                    <div class="tabCategory">
+                        <div>
+                            <button class="categoryTablinks" onclick="openProjectList(event, 'games')">
+                                <div class="categoryItem">Game Development</div>
                             </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Spiderman-Controller')">
-                                <div class="projectNameItem">Spiderman</div>
+                            <div id="games" class="gameDropdown">
+                                <div class="tabProject">
+                                    <button class="item1" onclick="openProjectReadme(event, 'XMath')">
+                                        <div class="projectNameItem">XMath</div>
+                                    </button>
+                                    <button class="item2" onclick="openProjectReadme(event, 'Spiderman-Controller')">
+                                        <div class="projectNameItem">Spiderman</div>
+                                    </button>
+                                    <button class="item3" onclick="openProjectReadme(event, 'Pathfinder-Simulation')">
+                                        <div class="projectNameItem">A* Pathfinder</div>
+                                    </button>
+                                    <button class="item4" onclick="openProjectReadme(event, 'Doom-Shooter')">
+                                        <div class="projectNameItem">Doom Shooter</div>
+                                    </button>
+                                    <button class="item5" onclick="openProjectReadme(event, 'GoblinClimber')">
+                                        <div class="projectNameItem">Goblin Climber</div>
+                                    </button>
+                                    <button class="item6" onclick="openProjectReadme(event, 'Spacegame')">
+                                        <div class="projectNameItem">Spacegame</div>
+                                    </button>
+                                    <button class="item7" onclick="openProjectReadme(event, 'Stratego')">
+                                        <div class="projectNameItem">Stratego</div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="categoryTablinks" onclick="openProjectList(event, 'web')">
+                                <div class="categoryItem">Web Development</div>
                             </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Pathfinder-Simulation')">
-                                <div class="projectNameItem">A* Pathfinder</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Doom-Shooter')">
-                                <div class="projectNameItem">Doom Shooter</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'GoblinClimber')">
-                                <div class="projectNameItem">Goblin Climber</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Spacegame')">
-                                <div class="projectNameItem">Spacegame</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Stratego')">
-                                <div class="projectNameItem">Stratego</div>
-                            </button>
+                            <div id="web" class="webDropdown">
+                                <div class="tabProject">
+                                    <button class="item1" onclick="openProjectReadme(event, 'ProjectGallery')">
+                                        <div class="projectNameItem">Project Gallery</div>
+                                    </button>
+                                    <button class="item2" onclick="openProjectReadme(event, 'HHN-Tribute')">
+                                        <div class="projectNameItem">Tribute</div>
+                                    </button>
+                                    <button class="item3" onclick="openProjectReadme(event, 'Streaming-Page')">
+                                        <div class="projectNameItem">Streaming Page</div>
+                                    </button>
+                                    <button class="item4" onclick="openProjectReadme(event, 'React-Memory')">
+                                        <div class="projectNameItem">React Memory</div>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="web" class="tabcontent">
-                        <div class="tab">
-                            <button class="tablinks" onclick="openProjectReadme(event, 'ProjectGallery')">
-                                <div class="projectNameItem">Project Gallery</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'HHN-Tribute')">
-                                <div class="projectNameItem">Tribute</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'Streaming-Page')">
-                                <div class="projectNameItem">Streaming Page</div>
-                            </button>
-                            <button class="tablinks" onclick="openProjectReadme(event, 'React-Memory')">
-                                <div class="projectNameItem">React Memory</div>
-                            </button>
-                        </div>
-                    </div>
                 </div>
+                <div id="default"></div>
             </div>
         </div>
         <div class="contentPage">
@@ -171,51 +173,34 @@
     </script>
     <script>selectBrightMode()</script>
     <script>
+        var selectedCategory = null;
+        document.getElementById('games').style.display = "none";
+        document.getElementById('web').style.display = "none";
         function openProjectList(evt, projectName) {
-            resetProjectNameTabs()
+            //resetProjectNameTabs()
             if (projectName === "default") {
                 return;
             }
-            // Declare all variables
-            var i, tabcontent, tablinks;
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+            else if (projectName === "games") {
+                selectedCategory = document.getElementById('games');
+                selectedCategory.style.display = "block";
+                document.getElementById('web').style.display = "none";
             }
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("categoryTablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            else if (projectName === "web") {
+                selectedCategory = document.getElementById('web');
+                selectedCategory.style.display = "block";
+                document.getElementById('games').style.display = "none";
             }
-            // Show the current tab, and add an "active" class to the link that opened the tab
-            document.getElementById(projectName).style.display = "block";
-            evt.currentTarget.className += " active";
-            document.getElementById('readmeContent').style.display = "none";
+
+
+
+
 
         }
     </script>
 
     <script>
         function openProjectReadme(evt, projectName) {
-
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the link that opened the tab
-
-            evt.currentTarget.className += " active";
             loadMarkdownFromGitHub(projectName);
             var readme = document.getElementById('readmeContent');
             readme.style.display = "block"
@@ -224,25 +209,9 @@
             }
         }
     </script>
+
     <script>
-        function resetProjectNameTabs() {
-
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-
-            }
-
-            tablinks = document.getElementsByClassName("tablinks active");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-
-        }
-    </script>
-    <script>
-        openProjectList(null, 'default')
+        //openProjectList(null, 'default')
     </script>
     <script>
         document.getElementById('readmeContent').style.display = "none";
@@ -250,9 +219,6 @@
     <script>
         function loadMarkdownFromGitHub(name) {
 
-            if (screen.width <= 950) {
-                document.getElementById("projectPicker").style.display = 'none';
-            }
             var projectURL = 'https://raw.githubusercontent.com/Monogenesis/' + name;
             fetch(projectURL + '/main/README.md', { mode: 'cors' })
                 .then(response => response.text())
@@ -297,24 +263,7 @@
         }
 
     </script>
-    <script>
-        function loadMarkdownLocaly(name) {
-            fetch('./markdown/' + name + '.md', { mode: 'no-cors' })
-                .then(response => response.text())
-                .then(text =>
-                    document.getElementById(name + 'Content').innerHTML = marked(text))
-                .then(() =>
-                    document.getElementsByTagName("a")[0].setAttribute("target", "_blank"))
-                .catch(error => console.error(error));
 
-        }
-    </script>
-    <script>
-        function activateProjectSelector() {
-            var menu = document.getElementById("projectPicker");
-            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-        }
-    </script>
 </body>
 
 </html>
