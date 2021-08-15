@@ -54,7 +54,7 @@ html {
 .projectSelector {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: relative;
 }
 .darkModeButton,
 .brightModeButton {
@@ -156,9 +156,10 @@ iframe {
 .projectNameContainer {
   /* border-color: green;
     border-style: solid; */
-  background-color: var(--htmlBackgroundColor);
+
   display: flex;
   flex-direction: column;
+  background: none;
 }
 
 .projectNameItem {
@@ -168,15 +169,16 @@ iframe {
   animation: spawn 1s ease;
   color: var(--primaryTextColor);
   font-size: medium;
+  font-weight: 700;
+  height: 23px;
 }
 
 .contentPage {
   border-color: rgb(124, 127, 148);
   border-style: solid;
-  margin-left: 450px;
+  margin-left: 50px;
   width: fit-content;
   color: var(--primaryTextColor);
-
   /* background-color: #363636; */
   background-color: var(--contentBackgroundColor);
   /* background-color: #0D7377; */
@@ -203,7 +205,8 @@ iframe {
   cursor: pointer;
   transition: 0.75s;
   border-color: gray;
-  border-width: 2px;
+  border-width: 1.5px;
+  background-color: var(--htmlBackgroundColor);
 }
 .tab button:hover {
   background-color: var(--highlightedHoverColor);
@@ -219,6 +222,9 @@ iframe {
 .menuAndTitle {
   display: flex;
   flex-direction: row;
+  border-width: 1px;
+  border-style: solid;
+  border-color: gray;
 }
 
 @keyframes spawn {
