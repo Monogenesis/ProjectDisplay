@@ -4,6 +4,7 @@ html {
   background: var(--backgroundImage);
   background-attachment: fixed;
   scroll-behavior: smooth;
+  transition: 1s;
 }
 
 .githubImageIcon {
@@ -87,7 +88,7 @@ div.pojectSelector {
   padding: 10px;
   margin-bottom: 5px;
   color: var(--primaryTextColor);
-
+  transition: 1s;
   font-weight: bold;
   font-size: x-large;
   font-family: serif;
@@ -183,6 +184,7 @@ iframe {
   background-color: var(--contentBackgroundColor);
   /* background-color: #0D7377; */
   box-shadow: 10px 15px 10px 1px rgb(65, 65, 65);
+  transition: 1s;
 }
 .contentPage img {
   display: flex;
@@ -203,7 +205,7 @@ iframe {
   border: solid;
   text-align: left;
   cursor: pointer;
-  transition: 0.75s;
+  transition: 1s;
   border-color: gray;
   border-width: 1.5px;
   background-color: var(--htmlBackgroundColor);
