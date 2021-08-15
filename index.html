@@ -264,6 +264,9 @@
                         githubLink.setAttribute('href', 'https://github.com/Monogenesis/' + name);
                         var githubImg = document.createElement('img');
                         githubImg.setAttribute('class', 'githubImageIcon');
+                        githubImg.style.borderRadius = "100%"
+                        githubImg.style.borderStyle = "solid"
+                        githubImg.style.borderColor = "#fc4903"
                         githubLink.appendChild(githubImg);
                         element.appendChild(githubLink)
                     })
