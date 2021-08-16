@@ -198,6 +198,7 @@ iframe {
 }
 
 .tab button {
+  position: relative;
   display: flex;
   background-color: inherit;
   padding: 22px 16px;
@@ -209,11 +210,16 @@ iframe {
   border-color: gray;
   border-width: 1.5px;
   background-color: var(--htmlBackgroundColor);
+  z-index: 1;
 }
 .tab button:hover {
   background-color: var(--highlightedHoverColor);
 }
 .tab button.active {
+  z-index: 10;
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 5px var(--highlightedActiveBorderColor);
   background-color: var(--highlightedActiveColor);
 }
 .tabcontent {
