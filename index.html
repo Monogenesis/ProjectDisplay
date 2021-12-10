@@ -261,7 +261,7 @@
             fetch(projectURL + '/main/README.md', { mode: 'cors' })
                 .then(response => response.text())
                 .then(text =>
-                    document.getElementById('readmeContent').innerHTML = marked(text))
+                    document.getElementById('readmeContent').innerHTML = marked.parse(text))
                 .then(() =>
                     Array.prototype.slice.call(document.getElementsByTagName("h1")).forEach(element => {
                         var githubLink = document.createElement('a');
