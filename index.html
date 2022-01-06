@@ -117,7 +117,8 @@
             },
             {
                 variableName: '--htmlBackgroundColor',
-                darkMode: '#474753',
+                // darkMode: '#474753',
+                darkMode: '#363636',
                 brightMode: 'rgb(221, 221, 221)'
             },
             {
@@ -142,8 +143,9 @@
             },
             {
                 variableName: '--highlightedActiveColor',
-                darkMode: '#363636',
-                brightMode: '#959595'
+                darkMode: '#0D1117',
+                // brightMode: '#959595'
+                brightMode: 'rgba(150, 150, 150, 1)'
             },
             {
                 variableName: '--markdownTextColor',
@@ -158,7 +160,7 @@
             {
                 variableName: '--highlightedActiveBorderColor',
                 darkMode: 'white',
-                brightMode: 'red'
+                brightMode: 'black'
             }
         ]
 
@@ -173,7 +175,7 @@
             });
         }
     </script>
-    <script>selectBrightMode()</script>
+    <script>selectDarkMode()</script>
     <script>
         function openProjectList(evt, projectName) {
             resetProjectNameTabs()
@@ -270,7 +272,7 @@
                         githubImg.setAttribute('class', 'githubImageIcon');
                         githubImg.style.borderRadius = "100%"
                         githubImg.style.borderStyle = "solid"
-                        githubImg.style.borderColor = "#fc4903"
+                        githubImg.style.borderColor = "blue"
                         githubLink.appendChild(githubImg);
                         element.appendChild(githubLink)
                     })
@@ -305,16 +307,16 @@
 
     </script>
     <script>
-        function loadMarkdownLocaly(name) {
-            fetch('./markdown/' + name + '.md', { mode: 'no-cors' })
-                .then(response => response.text())
-                .then(text =>
-                    document.getElementById(name + 'Content').innerHTML = marked(text))
-                .then(() =>
-                    document.getElementsByTagName("a")[0].setAttribute("target", "_blank"))
-                .catch(error => console.error(error));
+        // function loadMarkdownLocaly(name) {
+        //     fetch('./markdown/' + name + '.md', { mode: 'no-cors' })
+        //         .then(response => response.text())
+        //         .then(text =>
+        //             document.getElementById(name + 'Content').innerHTML = marked(text))
+        //         .then(() =>
+        //             document.getElementsByTagName("a")[0].setAttribute("target", "_blank"))
+        //         .catch(error => console.error(error));
 
-        }
+        // }
     </script>
     <script>
         function activateProjectSelector() {
