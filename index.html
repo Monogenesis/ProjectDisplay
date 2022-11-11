@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="markdown.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/cdd7771074.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <title>Project Gallery</title>
@@ -273,11 +273,8 @@
                         githubLink.setAttribute('href', 'https://github.com/Monogenesis/' + name);
                         var githubImg = document.createElement('img');
                         githubImg.setAttribute('class', 'githubImageIcon');
-                        githubImg.style.borderRadius = "100%"
-                        githubImg.style.borderStyle = "solid"
-                        githubImg.style.borderColor = "blue"
                         githubLink.appendChild(githubImg);
-                        element.appendChild(githubLink)
+                        element.appendChild(githubLink);
                     })
                 ).then(() =>
                     Array.prototype.slice.call(document.getElementsByTagName("a")).forEach(element => {

@@ -87,7 +87,7 @@ html {
 }
 
 .content * {
-  animation: spawn 2s ease;
+  animation: spawn 1s ease;
 }
 
 .content h1,
